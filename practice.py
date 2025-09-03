@@ -1,9 +1,4 @@
 import csv
-"""
-productos = [
-    [id_producto, nombre, precio, activo]
-]
-"""
 
 def agregar():
     with open("productos.csv", "a", newline="") as file:
@@ -13,12 +8,12 @@ def agregar():
         precio = input("Ingrese el precio del producto: ")
         writer.writerow([id_producto, nombre, precio, 1])
 
-        #writer.writerow([4, "Regla", 1200, 1])
 
 def Listar():
     with open("productos.csv", "r") as file:
+        next(file) #Saltar cabezera
+        #reader = file.readlines()
         reader = csv.reader(file)
-        next(reader, None) #Saltar cabezera
         for row in reader:
             if row[3] == "1":
                 print(row)
@@ -28,26 +23,29 @@ def Actualizar():
 
     print("actualizando xd")
     
+    productos = []
+
     id_buscar = input("Ingrese el id del producto a actualizar: ")
     nombre_nuevo = input("Ingrese el nuevo nombre del producto: ")
     precio_nuevo = input("Ingrese el nuevo precio del producto: ")
 
-    productos = []
     actualizado = False
     with open("productos.csv", "r", encoding="utf-8") as file:
         reader = csv.reader(file)
         encabezado = next(reader, None)
         for row in reader:
+            productos.append(row)
             if row[0] == id_buscar:
                 row[1] = nombre_nuevo
                 row[2] = precio_nuevo
                 actualizado = True
-                productos.append(row)
+                
     
     with open("productos.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(encabezado)
         writer.writerows(productos)
+
 
     if actualizado:
         print("Producto actualizado con exito")
@@ -59,7 +57,30 @@ def Actualizar():
 
 def Eliminar():
     print("eliminando xd")
+    productos = []
+    id_producto = input("Ingrese el id del producto a eliminar: ")
+    eliminado = False
+    with open("productos.csv", "r", encoding="utf-8") as file:
+        reader = csv.reader(file)
+        encabezado = next(reader, None)
+        
+        for row in reader:
+            productos.append(row)
+            if row[0] == id_producto:
+                row[3] = "0"
+                eliminado = True
+            
+    
+    with open("productos.csv", "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(encabezado)
+        writer.writerows(productos)
+    
 
+    if eliminado:
+        print("Producto eliminado con exito")
+    else:
+        print("Producto no encontrado")            
 
 
 
