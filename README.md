@@ -1,3 +1,81 @@
+# 🎨 Editor de Mapas 2D en Godot
+
+> 🧩 **Proyecto universitario** – Herramienta para la creación de mapas 2D tipo *tile-based* para videojuegos.
+
+---
+
+## 🎯 Objetivo general
+Desarrollar una herramienta gráfica que permita a los usuarios **diseñar mapas tipo cuadrícula (tile-based)** para videojuegos 2D.  
+El editor debe ser **visual, interactivo y modular**, permitiendo pintar y borrar tiles, con distintos tipos de terreno.
+
+---
+
+## 🧱 Estado del proyecto
+
+| Funcionalidad | Estado | Descripción |
+|----------------|:------:|-------------|
+| Dibujo de tiles | ✅ | Permite pintar tiles sobre una cuadrícula |
+| Borrado de tiles | ✅ | Elimina tiles con clic derecho |
+| Tipos de tile (césped, ladrillo, suelo) | ✅ | Tres tipos básicos implementados |
+| Interfaz en Godot | ✅ | Interfaz funcional y limpia |
+| Capas (fondo, objetos, colisiones) | ⏳ | En desarrollo |
+| Guardado / Carga | ⏳ | Planeado con formato JSON |
+| Undo / Redo | ⏳ | Planeado |
+| Exportación a prototipo de juego | ⏳ | Planeado |
+
+---
+
+## 🕹️ Instrucciones de uso
+
+### ⚙️ Requisitos
+- [Godot Engine 4.x](https://godotengine.org/download)
+- Sistema operativo: **Windows**, **Linux** o **macOS**
+
+### ▶️ Ejecución
+1. Clona o descarga el repositorio.
+2. Abre la carpeta del proyecto en **Godot**.
+3. Ejecuta la escena principal (`main.tscn`).
+4. Empieza a **dibujar y borrar tiles** con el mouse.
+
+### 🖱️ Controles
+
+| Acción | Descripción |
+|--------|--------------|
+| 🖱️ Click izquierdo | Pinta un tile del tipo seleccionado |
+| 🖱️ Click derecho | Borra un tile |
+| 1️⃣ | Selecciona tile de césped |
+| 2️⃣ | Selecciona tile de ladrillo |
+| 3️⃣ | Selecciona tile de suelo |
+
+---
+
+## 🧩 Interfaz general
+
+> 💡 La interfaz está pensada para ser simple, clara y escalable.  
+> En el futuro incluirá paneles de herramientas, capas y propiedades.
+
+| Elemento | Descripción |
+|-----------|--------------|
+| **Área central** | Lienzo donde se dibuja el mapa |
+| **Panel lateral (futuro)** | Paleta de tiles y herramientas |
+| **Barra superior (futuro)** | Menú de archivo, vista y ayuda |
+| **Footer (futuro)** | Estado actual y mensajes del sistema |
+
+📸 **Ejemplo visual (agrega tu captura aquí):**  
+![Captura del editor](assets/screenshot.png)
+
+---
+
+## 🧠 Estructura del proyecto
+editor-de-mapas/
+│
+├── assets/ # Recursos gráficos (tiles, íconos, etc.)
+├── scenes/ # Escenas de Godot
+├── scripts/ # Código GDScript (lógica del editor)
+├── maps/ # Carpeta para mapas guardados (futuro)
+├── main.tscn # Escena principal
+└── README.md # Este archivo
+
 
 ---
 
@@ -67,4 +145,7 @@ El código puede reutilizarse y modificarse libremente con fines educativos.
 
 > 💬 *“Construir herramientas es el primer paso para crear mundos.”*  
 > — Proyecto Editor de Mapas 2D 🌍
+
+
+
 
